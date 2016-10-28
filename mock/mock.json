@@ -1,0 +1,27 @@
+{
+	"routes": [{
+		"name" : "home",
+		"endpoint": "/",
+		"template": "index",
+		"async": false
+	},
+	{
+		"name" : "getapi",
+		"endpoint" :"/getScore",
+		"method":"post",
+		"async":true
+	}
+	],
+	"data":{
+		"getapi" : {
+			"score" : 100,
+			"message" : "hah",
+			"info" : {
+				"douban": "doubanmessage",
+				"yyy" : "yyymesage",
+				"zhihu" :"zhihumessage",
+				"weibo" :"weibomessage"
+			}
+		}
+	}
+}
