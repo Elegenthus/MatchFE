@@ -14,10 +14,13 @@
 	],
 	"data":{
 		"getapi" : {
-			"score" : 100,
+			"score" : 80,
 			"message" : "hah",
 			"info" : {
-				"douban": "doubanmessage",
+				"douban": {
+					"film":"huhuhuh",
+					"book":""
+				},
 				"yyy" : "yyymesage",
 				"zhihu" :"zhihumessage",
 				"weibo" :"weibomessage"
