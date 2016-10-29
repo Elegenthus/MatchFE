@@ -1,12 +1,12 @@
 <template>
     <div class="result">
-      <div class="back"><img src="../img/back.png" alt="back"></div>
+      <div class="back"><img src="../img/back.png" alt="back" v-on:click="back"></div>
       <div class="container">
           <div class="title">你们的Match指数是</div>
       <div class="piechart">
-        <div class="score">{{score}}%</div>
+        <div class="score">{{Math.floor(score)}}%</div>
         <svg viewBox = "0 0 32 32" class = "svg_circle">
-        <circle class="circle" r = "16" cx = "16" cy ="16" v-bind:style = "{strokeDasharray:score + ' 100'}"></circle>
+        <circle class="circle" r = "16" cx = "16" cy ="16" v-bind:style = "{strokeDasharray:Math.floor(score) + ' 100'}"></circle>
         </svg>
       </div>
       <div class="title word">
@@ -49,7 +49,7 @@
       <div class="msg">
         <div class="title_s">微博</div>
         <div class="common">
-          <div class="common_t">共同关注的热点：</div>
+          <div class="common_t">共同关注的大神：</div>
           <div class="common_t">
             {{info.weibo}}
           </div>
@@ -57,14 +57,14 @@
       </div>
       </div>
       
-      <div class="box" v-show = "info.yyy.length">
+      <div class="box" v-show = "info.wangyi.length">
         <div class="line"></div>
       <div class="msg">
         <div class="title_s">网易云音乐</div>
         <div class="common">
           <div class="common_t">共同听过的音乐：</div>
           <div class="common_t">
-            {{info.yyy}}
+            {{info.wangyi}}
           </div>
         </div>
       </div>
@@ -86,20 +86,25 @@ export default {
   },
 	data (){
 		return {
-      "score" : 70,
+      "score" : 0,
       "message" : "",
       "info" : {
         "douban": {
                   film:"",
                   book:""
                 },
-        "yyy" : "",
+        "wangyi" : "",
         "zhihu" :"",
         "weibo" :""
       }
     }
 
-	}
+	},
+  methods:{
+    back:function(e){
+       this.$router.push("/")
+    }
+  }
 }
 </script>
 

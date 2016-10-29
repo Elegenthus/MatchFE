@@ -56,8 +56,7 @@
         <div class="matching">
           <img src="../img/loading.svg" alt="loading">
           <div class="text">MATCHING...</div>
-        </div>
-        
+        </div>     
       </div>
     </div>
 </template>
@@ -85,25 +84,24 @@ export default {
 			this.onNext = true
 		},
     count:function(event){
-
       this.isloading = true
 
-      fetch('/getScore', {
+      fetch('/getScore/', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
       body: JSON.stringify({
-          doubanId1: this.doubanId1,
-          doubanId2: this.doubanId2,
-          wangyiId1: this.wangyiId1,
-          wangyiId2: this.wangyiId2,
-          weiboId1: this.weiboId1,
-          weiboId2: this.weiboId2,
-          zhihuId1: this.zhihu1,
-          zhihuId2: this.zhihu2
-      })
+    wangyiId1: this.wangyiId1,
+    wangyiId2: this.wangyiId2,
+    doubanId1: this.doubanId1,
+    doubanId2: this.doubanId2,
+    weiboId1: this.weiboId1,
+    weiboId2: this.weiboId2,
+    zhihuId1: this.zhihuId1,
+    zhihuId2: this.zhihuId2
+  })
     })
     .then( res => {
       return res.json()
@@ -165,6 +163,9 @@ export default {
     animation: loading 4s infinite;  
     visibility: visible;
     z-index: 4;
+  }
+  .main_next:hover{
+    cursor: pointer;
   }
   .item{
   	position: absolute;

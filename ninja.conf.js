@@ -3,8 +3,8 @@ module.exports = {
 	mock: "/mock/mock.json", // dir for mock data
 	webpack: true, // flag for using webpack or not
 	proxy: {
-		route: "/api",
-		origin: "http://xueer.muxixyz.com"
+		route: "/getScore",
+		origin: "http://120.77.57.126:5000"
 	},
 	staticDir: "/static",
 	templateDir: "/template",
