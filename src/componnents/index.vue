@@ -1,6 +1,6 @@
 <template>
   	<div class="index">
-     	<div class="main item" v-bind:class="{ mainNext : onNext}">
+     	<div class="main item" v-bind:class="{ mainNext : onNext}" v-on:mousewheel="scrollNext">
      		<div class="pic">
      			<img src="../img/match.svg" alt="match" class="main_icon">
      			<img src="../img/text.svg" alt="text" class="main_text">
@@ -112,6 +112,12 @@ export default {
         this.$router.push("result")
        }, 2000)
     })
+    },
+    scrollNext:function(e){
+      if (this.onNext) {
+        return
+      }
+      this.onNext = true
     }
 	}
 }
