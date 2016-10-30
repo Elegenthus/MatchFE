@@ -5,13 +5,12 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	entry: {
-		'main.js': ['./src/main.js'],
-		'whatwg-fetch': ['whatwg-fetch', 'webpack-hot-middleware/client']
+		'main.js': ['./src/main.js']
 	},
 	output: {
-		path: '/',
-		publicPath: 'http://localhost:3000/static/',
-		filename: '[name]'
+		path: path.join(__dirname, '/static'),
+		publicPath: '/static/',
+		filename: 'main.js'
 	},
 	module: {
 	    loaders: [
